@@ -41,96 +41,96 @@ Plug 'tpope/vim-commentary'
 " Switch to normal mode
 inoremap jk <Esc>
 
-" In insert mode before a selection
+" In insert mode before a selection --(i)
 inoremap <leader>i <Esc>O
 
-" In insert mode after a selection
+" In insert mode after a selection --(a)
 inoremap <leader>a <Esc>o
 
-" Insert at the start of the line
+" Insert at the start of the line --(I)
 nnoremap I ^
 
-" Insert at the end of the line
+" Insert at the end of the line --(A)
 nnoremap A $
 
-" Add a new line and insert below the cursor
+" Add a new line and insert below the cursor --(o)
 nnoremap o o<Esc>j
 
-" Add a new line and insert above the cursor
+" Add a new line and insert above the cursor --(O)
 nnoremap O O<Esc>k
 
 " MOTION COMMANDS (SELECTION COMMANDS)
 
-" Select forward until the next word
+" Select forward until the next word --(w)
 vnoremap w w
 
-" Select to the end of the current word
+" Select to the end of the current word --(e)
 vnoremap e e
 
-" Select backward to the start of the current word
+" Select backward to the start of the current word --(b)
 vnoremap b b
 
-" Select forward by word
+" Select forward by word --(W)
 vnoremap W W
 
-" Select to the end of the current word
+" Select to the end of the current word --(E)
 vnoremap E E
 
-" Select backward by word
+" Select backward by word --(B)
 vnoremap B B
 
 " DELETIONS AND MODIFICATIONS COMMANDS
 
-" Delete entire selection
+" Delete entire selection --(d)
 vnoremap d d
 
-" Delete selection and enter Insert mode
+" Delete selection and enter Insert mode --(c)
 vnoremap c c
 
-" Repeat the last insertion
+" Repeat the last insertion --(.)
 nnoremap . .
 
 " YANKING AND PASTING COMMANDS
 
-" Yank text
+" Yank text --(y)
 nnoremap y y
 
-" Paste text
+" Paste text --(p)
 nnoremap p p
 
-" Yank to system clipboard
+" Yank to system clipboard --(Space + y / Space + p)
 nnoremap <Space>y "+y
 " Paste from system clipboard
 nnoremap <Space>p "+p
 
 " SEARCH COMMANDS
 
-" Search forward
+" Search forward --(/)
 nnoremap / /
-" Search backward
+" Search backward --(?)
 nnoremap ? ?
-" Cycle through search matches
+" Cycle through search matches --(n/N)
 nnoremap n n
 nnoremap N N
 
-" Select all instances of a regex inside selection
+" Select all instances of a regex inside selection --(s)
 vnoremap s :s/\%V\%s//g<CR>
 
 " SPLIT AND WINDOW COMMANDS
 
-" Open splits using Ctrl-w . (default)
+" Open splits using Ctrl-w . (default) --(Ctrl-w .)
 nnoremap <C-w> <C-w>
 
-" Move between splits with hjkl
+" Move between splits with hjkl --(Ctrl-w hjkl)
 nnoremap <C-w>h <C-w>h
 nnoremap <C-w>j <C-w>j
 nnoremap <C-w>k <C-w>k
 nnoremap <C-w>l <C-w>l
 
-" Close split
+" Close split --(Ctrl-w q)
 nnoremap <C-w>q <C-w>q
 
-" Close all splits except current
+" Close all splits except current --(Ctrl-w o)
 nnoremap <C-w>o <C-w>o
 
 " SELECTION COMMANDS
@@ -138,46 +138,46 @@ nnoremap <C-w>o <C-w>o
 " Select all
 nnoremap <C-a> ggVG
 
-" Join lines in selection
+" Join lines in selection --(J)
 vnoremap J :join<CR>
 
 " TEXT EDITING AND REPLACING COMMANDS
 
-" Replace selected characters
+" Replace selected characters --(r)
 vnoremap r r
 
-" Replace selection with yanked text
+" Replace selection with yanked text --(R)
 vnoremap R "_dP
 
-" Indent lines
+" Indent lines --(> / <)
 nnoremap > >>
 " Unindent lines
 nnoremap < <<
 
 " UNDO / REDO COMMANDS
 
-" Undo
+" Undo --(u)
 nnoremap u u
 
-" Redo
+" Redo --(U)
 nnoremap U <C-r>
 
 " COMMENTING AND MACROS
 
-" Comment line
+" Comment line --(ctrl-c)
 nnoremap <C-c> gcc
 
-" Start/stop recording a macro
+" Start/stop recording a macro --(q)
 nnoremap Q q
 " Replay macro from register @
 nnoremap q @q
 
 " JUMPLIST NAVIGATION
 
-" Save position to jumplist
+" Save position to jumplist --(Ctrl-s)
 nnoremap <C-s> :normal! m'<CR>
 
-" Jump forward
+" Jump forward --(Ctrl-i, Ctrl-o)
 nnoremap <C-i> <C-i>
 " Jump backward
 nnoremap <C-o> <C-o>
