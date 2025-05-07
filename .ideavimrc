@@ -1,0 +1,204 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Custom keybindings Helix Like
+
+" INSERT MODE COMMANDS
+
+" Switch to normal mode
+inoremap jk <Esc>
+
+" In insert mode before a selection
+inoremap <leader>i <Esc>O
+
+" In insert mode after a selection
+inoremap <leader>a <Esc>o
+
+" Insert at the start of the line
+nnoremap I ^
+
+" Insert at the end of the line
+nnoremap A $
+
+" Add a new line and insert below the cursor
+nnoremap o o<Esc>j
+
+" Add a new line and insert above the cursor
+nnoremap O O<Esc>k
+
+" MOTION COMMANDS (SELECTION COMMANDS)
+
+" Select forward until the next word
+vnoremap w w
+
+" Select to the end of the current word
+vnoremap e e
+
+" Select backward to the start of the current word
+vnoremap b b
+
+" Select forward by word
+vnoremap W W
+
+" Select to the end of the current word
+vnoremap E E
+
+" Select backward by word
+vnoremap B B
+
+" DELETIONS AND MODIFICATIONS COMMANDS
+
+" Delete entire selection
+vnoremap d d
+
+" Delete selection and enter Insert mode
+vnoremap c c
+
+" Repeat the last insertion
+nnoremap . .
+
+" YANKING AND PASTING COMMANDS
+
+" Yank text
+nnoremap y y
+
+" Paste text
+nnoremap p p
+
+" Yank to system clipboard
+nnoremap <Space>y "+y
+" Paste from system clipboard
+nnoremap <Space>p "+p
+
+" SEARCH COMMANDS
+
+" Search forward
+nnoremap / /
+" Search backward
+nnoremap ? ?
+" Cycle through search matches
+nnoremap n n
+nnoremap N N
+
+" Select all instances of a regex inside selection
+vnoremap s :s/\%V\%s//g<CR>
+
+" SPLIT AND WINDOW COMMANDS
+
+" Open splits using Ctrl-w . (default)
+nnoremap <C-w> <C-w>
+
+" Move between splits with hjkl
+nnoremap <C-w>h <C-w>h
+nnoremap <C-w>j <C-w>j
+nnoremap <C-w>k <C-w>k
+nnoremap <C-w>l <C-w>l
+
+" Close split
+nnoremap <C-w>q <C-w>q
+
+" Close all splits except current
+nnoremap <C-w>o <C-w>o
+
+" SELECTION COMMANDS
+
+" Select all
+nnoremap <C-a> ggVG
+
+" Join lines in selection
+vnoremap J :join<CR>
+
+" TEXT EDITING AND REPLACING COMMANDS
+
+" Replace selected characters
+vnoremap r r
+
+" Replace selection with yanked text
+vnoremap R "_dP
+
+" Indent lines
+nnoremap > >>
+" Unindent lines
+nnoremap < <<
+
+" UNDO / REDO COMMANDS
+
+" Undo
+nnoremap u u
+
+" Redo
+nnoremap U <C-r>
+
+" COMMENTING AND MACROS
+
+" Comment line
+nnoremap <C-c> gcc
+
+" Start/stop recording a macro
+nnoremap Q q
+" Replay macro from register @
+nnoremap q @q
+
+" JUMPLIST NAVIGATION
+
+" Save position to jumplist
+nnoremap <C-s> :normal! m'<CR>
+
+" Jump forward
+nnoremap <C-i> <C-i>
+" Jump backward
+nnoremap <C-o> <C-o>
+
+" OTHER MISCELLANEOUS COMMANDS
+
+" Cycle between selection (Alt-, Alt-)
+" Cycle primary selection forward
+nnoremap <A-,> <Esc>:normal! \<C-w><C-p><CR>
+" Cycle primary selection backward
+nnoremap <A-)> <Esc>:normal! \<C-w><C-n><CR>
+
+" CASE SWITCHING
+
+" Toggle case of selected letter (~)
+" Toggle case for selection
+vnoremap ~ ~
+
+" Set case to lower (`) and upper (Alt-):
+" Set selected text to lowercase
+vnoremap ` gu
+" Set selected text to uppercase
+vnoremap <A-`> gU
+
